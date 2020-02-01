@@ -9,9 +9,9 @@ const client = ViberClient.connect(AUTH_TOKEN)
 //const request = require('request-promise')
 const express = require("express")
 const app = express()
-const bodyParser = require('body-parser')
+// const bodyParser = require('body-parser')
 const port = 5000
-app.use(bodyParser.json())
+// app.use(bodyParser.json())
 app.post("/", (req, res) => {
     var upd = req.body
     console.log(upd)
@@ -26,7 +26,10 @@ app.post("/", (req, res) => {
             txt = msg.text || 0
         }
         txt = txt < 2 ? Math.abs(txt) : txt > 1 ? 0 : 0
-        client.sendCarouselContent(USER_ID, k[txt])
+       client.sendMessage(USER_ID, {
+  type: 'text',
+  text: 'Hello',
+})
     }
     if (upd.hasOwnProperty("update_id")) {
         if (upd.hasOwnProperty("inline_query")) {
@@ -36,17 +39,14 @@ app.post("/", (req, res) => {
             TGp(req)
         }
 
-        upd.$ = '❓'
-        upd.ref = '[cf]'
-        var chat = USER_ID
-        var Y = [upd, chat]
+      
         
-        console.log(Y)
+        
         res.json(
             {
                 method: 'sendMessage',
-                chat_id: chat,
-                text: Y
+                chat_id: 'chat',
+                text: 'Y'
             }
         )
     }
