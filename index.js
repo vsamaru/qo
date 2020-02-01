@@ -1,4 +1,4 @@
-const { TGp, iQ, k } = require('./TWO')
+// const { TGp, iQ, k } = require('./TWO')
 const { ViberClient } = require('messaging-api-viber')
 const AUTH_TOKEN = '4ae0a46a32e7de59-8008f09131f0c458-73e057ff3f0dcbcb';
 const client = ViberClient.connect(AUTH_TOKEN)
