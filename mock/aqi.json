@@ -1,0 +1,49 @@
+{
+  "status": "ok",
+  "data": {
+    "aqi": 59,
+    "idx": 8767,
+    "attributions": [
+      {
+        "url": "http://worldweather.wmo.int",
+        "name": "World Meteorological Organization - surface synoptic observations (WMO-SYNOP)"
+      },
+      {
+        "url": "https://vn.usembassy.gov/embassy-consulates/ho-chi-minh-city/air-quality-monitor/",
+        "name": "Ho Chi Minh City Air Quality Monitor - Embassy of the United States"
+      },
+      {
+        "url": "https://waqi.info/",
+        "name": "World Air Quality Index Project"
+      }
+    ],
+    "city": {
+      "geo": [
+        10.782978,
+        106.700711
+      ],
+      "name": "Ho Chi Minh City US Consulate, Vietnam (Hà Nội Đại sứ quán Mỹ, Vietnam)",
+      "url": "https://aqicn.org/city/vietnam/ho-chi-minh-city/us-consulate"
+    },
+    "dominentpol": "pm25",
+    "iaqi": {
+      "pm25": {
+        "v": 59
+      },
+      "w": {
+        "v": 4.6
+      },
+      "wg": {
+        "v": 9.2
+      }
+    },
+    "time": {
+      "s": "2019-04-24 16:00:00",
+      "tz": "+07:00",
+      "v": 1556121600
+    },
+    "debug": {
+      "sync": "2019-04-24T18:40:21+09:00"
+    }
+  }
+}
