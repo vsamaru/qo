@@ -6,7 +6,7 @@ const { k } = require('./%')
 const { ViberClient } = require('messaging-api-viber')
 const AUTH_TOKEN = '4ae0995b6f67d10d-dd36b04c65262134-adf72625e8e168aa';
 const client = ViberClient.connect(AUTH_TOKEN)
-const request = require('request-promise')
+//const request = require('request-promise')
 const express = require("express")
 const app = express()
 const bodyParser = require('body-parser')
@@ -14,7 +14,7 @@ const port = 5000
 app.use(bodyParser.json())
 app.post("/", (req, res) => {
     var upd = req.body
-    console.info(upd)
+    console.log(upd)
     if (upd.hasOwnProperty("timestamp")) {
         var txt = 0
        
@@ -41,7 +41,7 @@ app.post("/", (req, res) => {
         var chat = USER_ID
         var Y = [upd, chat]
         
-        console.info(Y)
+        console.log(Y)
         res.json(
             {
                 method: 'sendMessage',
