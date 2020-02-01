@@ -1,7 +1,5 @@
-const { TGp } = require('./tg')
-const { iQ } = require('./src')
+const { TGp, iQ, k } = require('./TWO')
 const { ViberClient } = require('messaging-api-viber')
-const { k } = require('./%')
 const AUTH_TOKEN = '4ae0a46a32e7de59-8008f09131f0c458-73e057ff3f0dcbcb';
 const client = ViberClient.connect(AUTH_TOKEN)
 const request = require('request-promise')
@@ -33,17 +31,7 @@ app.post("/", (req, res) => {
         if (Y.hasOwnProperty("photo")) {
             TGp(req)
         }
-        let toGAS = JSON.stringify(upd,null,4)
-    const event = upd.event
-    var url = `https://script.google.com/macros/s/AKfycbzXJk_nFnRSKsFreT3Zh-u2r19ntmqpEtVIAkhaeA/exec?${toGAS}`
-    var retstr = request(url, { resolveWithFullResponse: true }).then(
-        response => {
-            if (response.statusCode === 200) {
 
-                return response.body
-            }
-
-        })
         Y.$ = '❓'
         Y.ref = '[cf]'
         var chat = Y.message.from.id
@@ -85,4 +73,3 @@ app.listen(port, () => {
     console.log(`Server is booming on port 5000
 Visit http://localhost:5000`)
 })
-exports.CF = app
