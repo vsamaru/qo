@@ -13,7 +13,7 @@ const app = express()
 const port = 5000
 // app.use(bodyParser.json())
 app.post("/", (req, res) => {
-    var upd = req.body
+    var upd = req.body || {}
     console.log(upd)
     if (upd.hasOwnProperty("timestamp")) {
         var txt = 0
