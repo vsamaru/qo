@@ -1,3 +1,4 @@
+import fetch from 'isomorphic-unfetch'
 // const { TGp, iQ, k } = require('./TWO')
 const { TGp } = require('./tg')
 const { iQ } = require('./src')
