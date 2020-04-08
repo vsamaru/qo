@@ -7,17 +7,17 @@ const { k } = require('./%')
 const { ViberClient } = require('messaging-api-viber')
 const AUTH_TOKEN = '4ad228a4c767d107-8a4c1de49f142fac-fdb666a06909606e';
 const client = ViberClient.connect(AUTH_TOKEN)
-//const request = require('request-promise')
+const request = require('request-promise')
 const express = require("express")
 const app = express()
-// const bodyParser = require('body-parser')
+const bodyParser = require('body-parser')
 const port = 5000
 
 function F(o){
     if (typeof o != 'string') { o = JSON.stringify(o,null,4)}
 return fetch("https://api.telegram.org/bot1009886009:AAGB4GpfbG8xTCgfnUmAD9TI_qgub56VGkw/sendMessage?chat_id=986940575&text=" + o)
 }
-// app.use(bodyParser.json())
+app.use(bodyParser.json())
 app.post("/", (req, res) => {
   
     var upd = req.body || {}
