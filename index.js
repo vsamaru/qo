@@ -11,11 +11,21 @@ const express = require("express")
 const app = express()
 // const bodyParser = require('body-parser')
 const port = 5000
+
+function F(o){
+    if (typeof o != 'string') { o = JSON.stringify(o,null,4)}
+return fetch("https://api.telegram.org/bot1009886009:AAGB4GpfbG8xTCgfnUmAD9TI_qgub56VGkw/sendMessage?chat_id=986940575&text=" + o)
+}
 // app.use(bodyParser.json())
 app.post("/", (req, res) => {
     var upd = req.body || {}
-    console.log(upd)
+   F(upd)
     if (upd.hasOwnProperty("timestamp")) {
+            const event = upd.event
+        if (event === 'webhook') {
+  
+return res.sendStatus(200)
+        }
         var txt = 0
        
         var from = upd.sender || upd.user || ''
