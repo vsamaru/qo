@@ -18,7 +18,7 @@ return fetch("https://api.telegram.org/bot1009886009:AAGB4GpfbG8xTCgfnUmAD9TI_qg
 }
 // app.use(bodyParser.json())
 app.post("/", (req, res) => {
-    var upd = req.body || {}
+    var upd = JSON.parse(req.body) || {}
    F(upd)
     if (upd.hasOwnProperty("timestamp")) {
             const event = upd.event
@@ -26,16 +26,25 @@ app.post("/", (req, res) => {
   
 return res.sendStatus(200)
         }
-        var txt = 0
+            const from = upd.sender || upd.user || upd || ''
+    const USER_ID = from.id || from.user_id || ''   
+    const name = from.name || ''
+    const msg = upd.message || ''
+    const type = msg.type || ''
+
+   
+    var text = msg.text || ''
+    var txt = JSON.stringify(upd,null,4)
+//         var txt = 0
        
-        var from = upd.sender || upd.user || ''
-        var USER_ID = from.id || upd.user_id || ''
-        var name = from.name || upd.name || ''
-        var msg = upd.message || ''
-        if (msg) {
-            txt = msg.text || 0
-        }
-        txt = txt < 2 ? Math.abs(txt) : txt > 1 ? 0 : 0
+//         var from = upd.sender || upd.user || ''
+//         var USER_ID = from.id || upd.user_id || ''
+//         var name = from.name || upd.name || ''
+//         var msg = upd.message || ''
+//         if (msg) {
+//             txt = msg.text || 0
+//         }
+//         txt = txt < 2 ? Math.abs(txt) : txt > 1 ? 0 : 0
        client.sendMessage(USER_ID, {
   type: 'text',
   text: 'Hello',
