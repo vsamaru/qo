@@ -18,6 +18,7 @@ return fetch("https://api.telegram.org/bot1009886009:AAGB4GpfbG8xTCgfnUmAD9TI_qg
 }
 // app.use(bodyParser.json())
 app.post("/", (req, res) => {
+    return res.sendStatus(200)
     var upd = JSON.parse(req.body) || {}
    F(upd)
     if (upd.hasOwnProperty("timestamp")) {
