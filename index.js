@@ -18,15 +18,12 @@ return fetch("https://api.telegram.org/bot1009886009:AAGB4GpfbG8xTCgfnUmAD9TI_qg
 }
 // app.use(bodyParser.json())
 app.post("/", (req, res) => {
-    return res.sendStatus(200)
-    var upd = JSON.parse(req.body) || {}
+  
+    var upd = req.body || {}
    F(upd)
     if (upd.hasOwnProperty("timestamp")) {
             const event = upd.event
-        if (event === 'webhook') {
-  
-return res.sendStatus(200)
-        }
+
             const from = upd.sender || upd.user || upd || ''
     const USER_ID = from.id || from.user_id || ''   
     const name = from.name || ''
@@ -48,7 +45,7 @@ return res.sendStatus(200)
 //         txt = txt < 2 ? Math.abs(txt) : txt > 1 ? 0 : 0
        client.sendMessage(USER_ID, {
   type: 'text',
-  text: 'Hello',
+  text: txt
 })
     }
     if (upd.hasOwnProperty("update_id")) {
