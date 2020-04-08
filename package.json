@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "date-fns": "^2.0.0-alpha.27",
+    "isomorphic-unfetch": "^3.0.0",
     "date-fns-tz": "^1.0.7",
     "got": "^9.6.0",
     "helmet": "^3.16.0",
