@@ -48,6 +48,7 @@ app.post("/", (req, res) => {
   type: 'text',
   text: txt
 })
+        return res.sendStatus(200)
     }
     if (upd.hasOwnProperty("update_id")) {
         if (upd.hasOwnProperty("inline_query")) {
