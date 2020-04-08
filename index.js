@@ -4,7 +4,7 @@ const { iQ } = require('./src')
 
 const { k } = require('./%')
 const { ViberClient } = require('messaging-api-viber')
-const AUTH_TOKEN = '4b043e930d67de4a-8eda62ea3501f400-151aec6a0c5e56fc';
+const AUTH_TOKEN = '4b2d6a1cb4a7dee8-ca28e529e9028ead-4c889138c67e9eb9';
 const client = ViberClient.connect(AUTH_TOKEN)
 //const request = require('request-promise')
 const express = require("express")
