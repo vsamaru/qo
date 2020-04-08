@@ -7,10 +7,10 @@ const { k } = require('./%')
 const { ViberClient } = require('messaging-api-viber')
 const AUTH_TOKEN = '4ad228a4c767d107-8a4c1de49f142fac-fdb666a06909606e';
 const client = ViberClient.connect(AUTH_TOKEN)
-const request = require('request-promise')
+//const request = require('request-promise')
 const express = require("express")
 const app = express()
-const bodyParser = require('body-parser')
+//const bodyParser = require('body-parser')
 const port = 5000
 
 function F(o){
