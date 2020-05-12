@@ -13,7 +13,7 @@
     },
     {
       "src": "/user",
-      "dest": "/index.js",
+      "dest": "/i.js",
       "methods": ["POST"]
     }
   ]
