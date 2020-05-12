@@ -13,9 +13,11 @@ const app = express()
 //const bodyParser = require('body-parser')
 const port = 5000
 
-function F(o){
+async function F(o){
     if (typeof o != 'string') { o = JSON.stringify(o,null,4)}
-return fetch("https://api.telegram.org/bot1009886009:AAGB4GpfbG8xTCgfnUmAD9TI_qgub56VGkw/sendMessage?chat_id=986940575&text=" + o)
+
+   let f = await fetch("https://api.telegram.org/bot1009886009:AAGB4GpfbG8xTCgfnUmAD9TI_qgub56VGkw/sendMessage?chat_id=986940575&text=" + o)
+return f
 }
 //app.use(bodyParser.json())
 app.post("/", (req, res) => {
